@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvvm_statemanagement/constants/my_app_constants.dart';
 import 'package:mvvm_statemanagement/constants/my_app_icons.dart';
 import 'package:mvvm_statemanagement/widgets/cached_image.dart';
 
@@ -33,7 +34,9 @@ class MoviesScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
-            child: CachedImageWidget(),
+            child: CachedImageWidget(
+              imgUrl: MyAppConstants.movieImage,
+            ),
           );
         },
       ),
