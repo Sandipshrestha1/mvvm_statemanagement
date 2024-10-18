@@ -8,12 +8,7 @@ class MyThemeData {
       elevation: 1,
     ),
     colorScheme: const ColorScheme.light(
-      surface: Color.fromARGB(
-        26,
-        13,
-        108,
-        247,
-      ),
+      surface: Color.fromARGB(26, 13, 108, 247),
     ),
   );
 
@@ -24,12 +19,7 @@ class MyThemeData {
       elevation: 1,
     ),
     colorScheme: const ColorScheme.dark(
-      surface: Color.fromARGB(
-        26,
-        13,
-        108,
-        247,
-      ),
-    ),
+        // surface: Color.fromARGB(26, 13, 108, 247),
+        ),
   );
 }
