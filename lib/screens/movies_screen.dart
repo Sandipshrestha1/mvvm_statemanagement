@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mvvm_statemanagement/constants/my_app_constants.dart';
 import 'package:mvvm_statemanagement/constants/my_app_icons.dart';
-import 'package:mvvm_statemanagement/widgets/cached_image.dart';
 import 'package:mvvm_statemanagement/widgets/movies/movies_widget.dart';
 
 class MoviesScreen extends StatelessWidget {

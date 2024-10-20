@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mvvm_statemanagement/constants/my_app_constants.dart';
+import 'package:mvvm_statemanagement/constants/my_app_icons.dart';
 import 'package:mvvm_statemanagement/widgets/cached_image.dart';
 
 class MoviesWidget extends StatelessWidget {
@@ -29,7 +30,53 @@ class MoviesWidget extends StatelessWidget {
                       child: CachedImageWidget(
                         imgUrl: MyAppConstants.movieImage,
                       ),
-                    )
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const Text(
+                            "Movie title",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          const Row(
+                            children: [
+                              Icon(
+                                MyAppIcons.star,
+                                color: Colors.amber,
+                                size: 20,
+                              ),
+                              SizedBox(width: 5),
+                              Text("8/10"),
+                            ],
+                          ),
+                          const SizedBox(height: 10),
+                          // TODo: Add the genres widget
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Icon(
+                                MyAppIcons.watch_later,
+                                size: 20,
+                                color: Theme.of(context).colorScheme.secondary,
+                              ),
+                              const SizedBox(width: 5),
+                              const Text(
+                                "Release Date",
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                              const Spacer(),
+                              //ToDo : Add the favorite button
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               )),
