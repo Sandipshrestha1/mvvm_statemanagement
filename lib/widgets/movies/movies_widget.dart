@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mvvm_statemanagement/constants/my_app_constants.dart';
 import 'package:mvvm_statemanagement/constants/my_app_icons.dart';
 import 'package:mvvm_statemanagement/widgets/cached_image.dart';
+import 'package:mvvm_statemanagement/widgets/movies/favorite_btn.dart';
+import 'package:mvvm_statemanagement/widgets/movies/genres_list_widget.dart';
 
 class MoviesWidget extends StatelessWidget {
   const MoviesWidget({super.key});
@@ -55,6 +57,7 @@ class MoviesWidget extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 10),
+                          const GenresListWidget(),
                           // TODo: Add the genres widget
                           Row(
                             mainAxisSize: MainAxisSize.max,
@@ -72,6 +75,7 @@ class MoviesWidget extends StatelessWidget {
                               ),
                               const Spacer(),
                               //ToDo : Add the favorite button
+                              FavoriteBtnWidget(),
                             ],
                           ),
                         ],
