@@ -11,4 +11,5 @@ class MyAppIcons {
   static const IconData error = Icons.error;
   static const IconData star = Icons.star;
   static const IconData watch_later = Icons.watch_later_outlined;
+  static const IconData delete = Icons.delete;
 }
