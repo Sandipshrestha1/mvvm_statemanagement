@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mvvm_statemanagement/constants/my_app_icons.dart';
+import 'package:mvvm_statemanagement/screens/favorites_screen.dart';
 import 'package:mvvm_statemanagement/widgets/movies/movies_widget.dart';
 
-class MoviesScreen extends StatelessWidget {
+class MoviesScreen extends StatefulWidget {
   const MoviesScreen({super.key});
 
+  @override
+  State<MoviesScreen> createState() => _MoviesScreenState();
+}
+
+class _MoviesScreenState extends State<MoviesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +20,14 @@ class MoviesScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FavoritesScreen(),
+                ),
+              );
+            },
             icon: const Icon(
               MyAppIcons.favoriteRounded,
               color: Colors.red,

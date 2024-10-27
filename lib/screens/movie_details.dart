@@ -48,31 +48,47 @@ class MovieDetailsScreen extends StatelessWidget {
                               const SizedBox(height: 5.0),
                               Padding(
                                 padding: const EdgeInsets.all(18.0),
-                                child: Row(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Icon(
-                                      MyAppIcons.star,
-                                      color: Colors.amber,
-                                      size: 20,
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        const Icon(
+                                          MyAppIcons.star,
+                                          color: Colors.amber,
+                                          size: 20,
+                                        ),
+                                        const SizedBox(width: 5),
+                                        Text("9/10"),
+                                        SizedBox(
+                                          width: size.width * 0.6,
+                                        ),
+                                        // const Flexible(
+                                        //   child: SizedBox
+                                        //       .shrink(), // Replacing Spacer with Flexible and SizedBox
+                                        // ),
+                                        Text(
+                                          "ReleaseDate",
+                                          style: const TextStyle(
+                                              color: Colors.grey),
+                                        ),
+                                      ],
                                     ),
-                                    const SizedBox(width: 5),
-                                    Text("9/10"),
-                                    Spacer(),
+                                    const SizedBox(height: 10),
+                                    GenresListWidget(),
+                                    const SizedBox(height: 15),
                                     Text(
-                                      "ReleaseDate",
-                                      style:
-                                          const TextStyle(color: Colors.grey),
+                                      "overview " * 200,
+                                      textAlign: TextAlign.justify,
+                                      style: const TextStyle(
+                                        fontSize: 18.0,
+                                      ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 10),
-                                GenresListWidget(),
-                                const SizedBox(height: 15),
-                                Text("overview" * 200,
-                                    textAlign: TextAlign.justify,
-                                    style: const TextStyle(
-                                      fontSize: 18.0,
-                                    )),
                               )
                             ],
                           ),
@@ -82,7 +98,8 @@ class MovieDetailsScreen extends StatelessWidget {
                         alignment: Alignment.center,
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Theme.of(context).cardColor,
+                            color: Colors.red,
+                            //color: Theme.of(context).cardColor,
                             shape: BoxShape.circle,
                           ),
                           child: const Padding(
@@ -94,6 +111,17 @@ class MovieDetailsScreen extends StatelessWidget {
                     ],
                   )
                 ],
+              ),
+            ),
+            Positioned(
+              top: 5,
+              left: 5,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Theme.of(context).cardColor,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const BackButton(),
               ),
             ),
           ],
