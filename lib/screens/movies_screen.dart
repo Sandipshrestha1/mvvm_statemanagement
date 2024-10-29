@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mvvm_statemanagement/constants/my_app_icons.dart';
 import 'package:mvvm_statemanagement/screens/favorites_screen.dart';
+import 'package:mvvm_statemanagement/service/init_getit.dart';
+import 'package:mvvm_statemanagement/service/navigation_service.dart';
 import 'package:mvvm_statemanagement/widgets/movies/movies_widget.dart';
 
 class MoviesScreen extends StatefulWidget {
@@ -21,12 +23,9 @@ class _MoviesScreenState extends State<MoviesScreen> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => FavoritesScreen(),
-                ),
-              );
+              // Todo : Navigate to the favorite Screen
+              getIt<NavigationService>().showDialog(FavoritesScreen());
+              //    getIt<NavigationService>().navigate(FavoritesScreen());
             },
             icon: const Icon(
               MyAppIcons.favoriteRounded,

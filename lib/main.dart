@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      key: getIt<NavigationService>().navigatorKey,
+      navigatorKey: getIt<NavigationService>().navigatorKey,
       debugShowCheckedModeBanner: false,
       title: "Flutter Demo",
       theme: MyThemeData.darkTheme,

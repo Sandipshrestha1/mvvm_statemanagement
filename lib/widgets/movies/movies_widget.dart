@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mvvm_statemanagement/constants/my_app_constants.dart';
 import 'package:mvvm_statemanagement/constants/my_app_icons.dart';
+import 'package:mvvm_statemanagement/screens/movie_details.dart';
+import 'package:mvvm_statemanagement/service/init_getit.dart';
+import 'package:mvvm_statemanagement/service/navigation_service.dart';
 import 'package:mvvm_statemanagement/widgets/cached_image.dart';
 import 'package:mvvm_statemanagement/widgets/movies/favorite_btn.dart';
 import 'package:mvvm_statemanagement/widgets/movies/genres_list_widget.dart';
@@ -19,6 +22,9 @@ class MoviesWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(12.0),
           onTap: () {
 // navigate to the movie details page
+            getIt<NavigationService>().navigate(
+              const MovieDetailsScreen(),
+            );
           },
           child: Padding(
               padding: const EdgeInsets.all(8.0),
