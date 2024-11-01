@@ -23,4 +23,21 @@ class NavigationService {
     await showAdaptiveDialog(
         context: navigatorKey.currentContext!, builder: (context) => widget);
   }
+
+  void showSnackbar() {
+    final context = navigatorKey.currentContext!;
+    ScaffoldMessenger.of(context).hideCurrentMaterialBanner();
+    const snackbarWidget = SnackBar(
+      content: Text(
+        "Hello word",
+        style: TextStyle(
+          color: Colors.white,
+        ),
+      ),
+    );
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      snackbarWidget,
+    );
+  }
 }

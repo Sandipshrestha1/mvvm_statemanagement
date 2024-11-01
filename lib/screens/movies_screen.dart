@@ -24,7 +24,9 @@ class _MoviesScreenState extends State<MoviesScreen> {
           IconButton(
             onPressed: () {
               // Todo : Navigate to the favorite Screen
-              getIt<NavigationService>().showDialog(FavoritesScreen());
+
+              getIt<NavigationService>().showSnackbar();
+              //  getIt<NavigationService>().showDialog(FavoritesScreen());
               //    getIt<NavigationService>().navigate(FavoritesScreen());
             },
             icon: const Icon(
