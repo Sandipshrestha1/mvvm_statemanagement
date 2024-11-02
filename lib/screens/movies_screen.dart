@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mvvm_statemanagement/constants/my_app_icons.dart';
-import 'package:mvvm_statemanagement/screens/favorites_screen.dart';
+import 'package:mvvm_statemanagement/service/api_service.dart';
 import 'package:mvvm_statemanagement/service/init_getit.dart';
 import 'package:mvvm_statemanagement/service/navigation_service.dart';
 import 'package:mvvm_statemanagement/widgets/movies/movies_widget.dart';
@@ -35,7 +35,9 @@ class _MoviesScreenState extends State<MoviesScreen> {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () async {
+              await getIt<ApiService>().fetchMovies();
+            },
             icon: const Icon(
               MyAppIcons.darkmode,
             ),
