@@ -5,8 +5,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:mvvm_statemanagement/constants/my_app_icons.dart';
 import 'package:mvvm_statemanagement/models/movies_genre.dart';
-import 'package:mvvm_statemanagement/models/movies_model.dart';
-import 'package:mvvm_statemanagement/service/api_service.dart';
+import 'package:mvvm_statemanagement/repository/movies_repo.dart';
 import 'package:mvvm_statemanagement/service/init_getit.dart';
 import 'package:mvvm_statemanagement/service/navigation_service.dart';
 import 'package:mvvm_statemanagement/widgets/movies/movies_widget.dart';
@@ -44,7 +43,9 @@ class _MoviesScreenState extends State<MoviesScreen> {
             onPressed: () async {
               final List<MoviesGenre> genres =
                   //await getIt<ApiService>().fetchMovies();
-                  await getIt<ApiService>().fetchGenres();
+                  // await getIt<ApiService>().fetchGenres();
+                  //await MoviesRepository(getIt<ApiService>()).fetchGenres();
+                  await getIt<MoviesRepository>().fetchGenres();
               log("Genres are $genres");
             },
             icon: const Icon(
