@@ -1,5 +1,11 @@
+// ignore_for_file: unused_local_variable
+
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:mvvm_statemanagement/constants/my_app_icons.dart';
+import 'package:mvvm_statemanagement/models/movies_genre.dart';
+import 'package:mvvm_statemanagement/models/movies_model.dart';
 import 'package:mvvm_statemanagement/service/api_service.dart';
 import 'package:mvvm_statemanagement/service/init_getit.dart';
 import 'package:mvvm_statemanagement/service/navigation_service.dart';
@@ -36,7 +42,10 @@ class _MoviesScreenState extends State<MoviesScreen> {
           ),
           IconButton(
             onPressed: () async {
-              await getIt<ApiService>().fetchMovies();
+              final List<MoviesGenre> genres =
+                  //await getIt<ApiService>().fetchMovies();
+                  await getIt<ApiService>().fetchGenres();
+              log("Genres are $genres");
             },
             icon: const Icon(
               MyAppIcons.darkmode,
